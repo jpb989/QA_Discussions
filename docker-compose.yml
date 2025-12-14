@@ -17,6 +17,7 @@ services:
       retries: 10
 
   backend:
+    restart: always
     build: ./backend
     ports:
       - "8000:8000"
@@ -28,6 +29,7 @@ services:
       - db
 
   frontend:
+    restart: always
     build:
       context: ./frontend
       args:
