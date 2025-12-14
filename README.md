@@ -24,7 +24,18 @@ A real-time Question & Answer platform built with **Next.js**, **FastAPI**, and 
 
 ### Running Locally
 1.  Clone the repo.
-2.  Create a `.env` file in the root (see `docker-compose.yml` for required vars, or rely on defaults for dev).
+2.  Create a `.env` file in the root with the following environment variables:
+    ```
+    MYSQL_ROOT_PASSWORD=your_mysql_root_password
+    MYSQL_DATABASE=your_mysql_database
+    MYSQL_USER=your_mysql_user
+    MYSQL_PASSWORD=your_mysql_password
+    SECRET_KEY=your_secret_key_for_jwt
+    ALGORITHM=HS256
+    ACCESS_TOKEN_EXPIRE_MINUTES=30
+    NEXT_PUBLIC_API_URL=http://localhost:8000
+    ```
+    You can use the values above as defaults for development, or customize them as needed.
 3.  Run:
     ```bash
     docker-compose up --build
